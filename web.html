@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Separar nome e sobrenome</title>
+  </head>
+  <body>
+    <label for="nomeCompleto">Nome completo:</label>
+    <input type="text" id="nomeCompleto"><br><br>
+
+    <button onclick="separarNomeESobrenome()">>></button>
+    
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"><br><br>
+    
+    <label for="sobrenome">Sobrenome:</label>
+    <input type="text" id="sobrenome"><br><br>
+    
+    <script>
+
+      function separarNomeESobrenome() {
+
+        const nomeCompleto = document.getElementById("nomeCompleto").value;
+        
+
+        const nomeSobrenome = nomeCompleto.trim().split(" ");
+        const nome = nomeSobrenome[0];
+        const sobrenome = nomeSobrenome.slice(1).join(" ");
+        
+        document.getElementById("nome").value = nome;
+        document.getElementById("sobrenome").value = sobrenome;
+      }
+    </script>
+  </body>
+</html>
